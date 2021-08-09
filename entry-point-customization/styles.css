@@ -21,7 +21,7 @@ body {
 	gap: 24px;
 }
 .preview-area {
-	background: color(srgb 0.95 0.95 0.95);
+	background: #fafafa;
 	padding: 40px;
 	flex-grow: 1;
 	display: flex;
