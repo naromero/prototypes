@@ -1,11 +1,17 @@
 $(document).ready(function(){
 	// Variables
 	var config = {
-		buttonType: "bubble",
+		buttonType: "icon",
 		brandColor: "blue",
+		fillStyle: "default",
 		icon: "messenger",
 		iconStyle: "filled",
 		cornerStyle: "round",
+	};
+	var colors = {
+		red: "#e54343",
+		green: "#00a925",
+		blue: "#0083fe"
 	};
 	
 	// Functions
@@ -15,6 +21,10 @@ $(document).ready(function(){
 	}
 	function updateBrandColor() {
 		config.brandColor = $("select[name='brand-color']").val();
+		drawButton();
+	}
+	function updateFillStyle() {
+		config.fillStyle = $("input[name='fill-style']:checked").val();
 		drawButton();
 	}
 	function updateIcon() {
@@ -32,11 +42,11 @@ $(document).ready(function(){
 	function drawButton() {
 		// Button type
 		switch (config.buttonType) {
-			case "bubble":
+			case "icon":
 				$(".launcher").removeClass("launcher--pill");
 				$(".launcher").addClass("launcher--bubble");
 				break;
-			case "pill":
+			case "icon-label":
 				$(".launcher").removeClass("launcher--bubble");
 				$(".launcher").addClass("launcher--pill");
 				break;
@@ -44,21 +54,39 @@ $(document).ready(function(){
 				console.log("Invalid button type");
 		}	
 		
-		// Brand color
+		// Coloring
 		switch (config.brandColor) {
 			case "blue":
-				$(".launcher").css("background","#0082fd");
+				if (config.fillStyle == "default") {
+					$(".launcher").css("background", colors.blue);
+					$(".launcher").css("color", "#fff");
+				} else {
+					$(".launcher").css("background", "#fff");
+					$(".launcher").css("color", colors.blue);
+				}
 				break;
 			case "red":
-				$(".launcher").css("background","#e54343");
+				if (config.fillStyle == "default") {
+					$(".launcher").css("background", colors.red);
+					$(".launcher").css("color", "#fff");
+				} else {
+					$(".launcher").css("background", "#fff");
+					$(".launcher").css("color", colors.red);
+				}
 				break;
 			case "green":
-				$(".launcher").css("background","#00a925");
+				if (config.fillStyle == "default"){
+					$(".launcher").css("background", colors.green);
+					$(".launcher").css("color", "#fff");
+				} else {
+					$(".launcher").css("background", "#fff");
+					$(".launcher").css("color", colors.green);
+				}
 				break;
 			default:
 				console.log("Invalid brand color");
 		}
-		
+				
 		// Icon
 		var iconPath = `img/${config.icon}-${config.iconStyle}.svg`;
 		$('.launcher-icon').load(iconPath);
@@ -82,6 +110,7 @@ $(document).ready(function(){
 	// Events
 	$("#button-type").change(updateButtonType);
 	$("select[name='brand-color']").change(updateBrandColor);
+	$("#fill-style").change(updateFillStyle);
 	$("select[name='icon']").change(updateIcon);
 	$("#icon-style").change(updateIconStyle);
 	$("#corner-style").change(updateCornerStyle);

@@ -56,8 +56,6 @@ select {
 	height: 100%;
 }
 .launcher {
-	color: #fff;
-	background: #0083fe;
 	display: flex;
 	align-items: center;
 	justify-content: center;
