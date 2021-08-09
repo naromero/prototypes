@@ -7,16 +7,23 @@ $(document).ready(function(){
 		icon: "messenger",
 		iconStyle: "filled",
 		cornerStyle: "round",
+		labelText: "Chat Now"
 	};
 	var colors = {
 		red: "#e54343",
 		green: "#00a925",
 		blue: "#0083fe"
 	};
+	var cornerStyle = {
+		round: "60px",
+		soft: "8px",
+		sharp: "0px"
+	};
 	
 	// Functions
 	function updateButtonType() {
 		config.buttonType = $("input[name='button-type']:checked").val();
+		$("#label-text-field").toggle();
 		drawButton();
 	}
 	function updateBrandColor() {
@@ -37,6 +44,10 @@ $(document).ready(function(){
 	}
 	function updateCornerStyle() {
 		config.cornerStyle = $("input[name='corner-style']:checked").val();
+		drawButton();
+	}
+	function updateLabelText() {
+		config.labelText = $("input[name='label-text']").val();
 		drawButton();
 	}
 	function drawButton() {
@@ -94,17 +105,20 @@ $(document).ready(function(){
 		// Corner style
 		switch (config.cornerStyle) {
 			case "round":
-				$(".launcher").css("borderRadius","60px");
+				$(".launcher").css("borderRadius", cornerStyle.round);
 				break;
 			case "soft":
-				$(".launcher").css("borderRadius","8px");
+				$(".launcher").css("borderRadius", cornerStyle.soft);
 				break;
 			case "sharp":
-				$(".launcher").css("borderRadius","2px");
+				$(".launcher").css("borderRadius", cornerStyle.sharp);
 				break;	
 			default:
 				console.log("Invalid corner style")
 		}
+		
+		// Label text
+		$('.launcher-label').text(config.labelText);
 	}
 	
 	// Events
@@ -114,6 +128,9 @@ $(document).ready(function(){
 	$("select[name='icon']").change(updateIcon);
 	$("#icon-style").change(updateIconStyle);
 	$("#corner-style").change(updateCornerStyle);
-
+	$("input[name='label-text']").keyup(updateLabelText);
+	
+	// Initial conditions
+	$("#label-text-field").hide();
 	drawButton();
 });
