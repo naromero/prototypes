@@ -1,0 +1,99 @@
+:root {
+	--duration: 100ms;
+	--ease: ease;
+}
+/* Page */
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 15px;
+	color: #000;
+}
+.page {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+}
+.config-area {
+	padding: 20px;
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+.preview-area {
+	background: color(srgb 0.95 0.95 0.95);
+	padding: 40px;
+	flex-grow: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* Controls */
+label {
+	width: 100%;
+}
+.field {
+	display: flex;
+	flex-direction: column;
+}
+.control-label {
+	font-weight: 700;
+	margin-bottom: 12px;
+}
+.radio-option {
+	height: 28px;
+}
+select {
+	font-size: 16px;
+}
+
+/* Launcher */
+.launcher-icon svg {
+	width: 100%;
+	height: 100%;
+}
+.launcher {
+	color: #fff;
+	background: #0083fe;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	box-shadow: 0 4px 12px color(srgb 0 0 0 / 0.15);
+	cursor: pointer;
+	transition: filter var(--duration) var(--ease);
+}
+.launcher:hover {
+	filter: brightness(95%);
+}
+.launcher-label {
+	font-size: 17px;
+	font-weight: 600;
+}
+.launcher.launcher--bubble {
+	width: 60px;
+	height: 60px;
+	border-radius: 60px;
+}
+.launcher-icon {
+	z-index: 2;
+}
+.launcher.launcher--bubble .launcher-icon {
+	width: 32px;
+	height: 32px;
+}
+.launcher.launcher--bubble .launcher-label {
+	display: none;
+}
+.launcher.launcher--pill {
+	padding: 0 16px 0 13px;
+	height: 44px;
+	border-radius: 60px;
+}
+.launcher.launcher--pill .launcher-icon {
+	width: 24px;
+	height: 24px;
+}
