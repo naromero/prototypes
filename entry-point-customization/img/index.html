@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="app.js"></script>
+		<link href='reset.css' rel='stylesheet' type='text/css'>
+		<link href='styles.css' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<div class="page">
+			<div class="config-area">
+				<form id="button-type" class="field">
+					<label class="control-label">Type</label>
+					<label class="radio-option">
+						<input checked type="radio" name="button-type" value="bubble" />
+						Bubble
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="button-type" value="pill" />
+						Pill
+					</label>
+				</form>
+				<div class="field">
+					<label class="control-label" for="brand-color">Brand Color</label>
+					<select name="brand-color">
+						<option value="blue">Blue</option>
+						<option value="red">Red</option>
+						<option value="green">Green</option>
+					</select>
+				</div>
+				<div class="field">
+					<label class="control-label" for="icon">Icon</label>
+					<select name="icon">
+						<option value="messenger">Messenger</option>
+						<option value="chat">Chat</option>
+						<option value="conversation">Conversation</option>
+						<option value="question">Question</option>
+					</select>
+				</div>
+				<form id="icon-style" class="field">
+					<label class="control-label">Icon Style</label>
+					<label class="radio-option">
+						<input checked type="radio" name="icon-style" value="filled" />
+						Filled
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="icon-style" value="outline" />
+						Outline
+					</label>
+				</form>
+				<form id="corner-style" class="field">
+					<label class="control-label">Corner Style</label>
+					<label class="radio-option">
+						<input checked type="radio" name="corner-style" value="round" />
+						Round
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="corner-style" value="soft" />
+						Soft
+					</label>
+					<label class="radio-option">
+						<input type="radio" name="corner-style" value="sharp" />
+						Sharp
+					</label>
+				</form>
+			</div>
+			<div class="preview-area">
+				<div id="launcher" class="launcher launcher--bubble">
+					<div class="launcher-icon">
+					</div>
+					<div class="launcher-label">Chat Now</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
