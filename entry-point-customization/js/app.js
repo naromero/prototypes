@@ -7,7 +7,8 @@ $(document).ready(function(){
 		icon: "messenger",
 		iconStyle: "filled",
 		cornerStyle: "round",
-		labelText: "Chat Now"
+		labelText: "Chat Now",
+		isOpen: false,
 	};
 	var colors = {
 		red: "#e54343",
@@ -24,30 +25,37 @@ $(document).ready(function(){
 	function updateButtonType() {
 		config.buttonType = $("input[name='button-type']:checked").val();
 		$("#label-text-field").toggle();
+		closeChatWindow();
 		drawButton();
 	}
 	function updateBrandColor() {
 		config.brandColor = $("select[name='brand-color']").val();
+		closeChatWindow();
 		drawButton();
 	}
 	function updateFillStyle() {
 		config.fillStyle = $("input[name='fill-style']:checked").val();
+		closeChatWindow();
 		drawButton();
 	}
 	function updateIcon() {
 		config.icon = $("select[name='icon']").val();
+		closeChatWindow();
 		drawButton();
 	}
 	function updateIconStyle() {
 		config.iconStyle = $("input[name='icon-style']:checked").val();
+		closeChatWindow();
 		drawButton();
 	}
 	function updateCornerStyle() {
 		config.cornerStyle = $("input[name='corner-style']:checked").val();
+		closeChatWindow();
 		drawButton();
 	}
 	function updateLabelText() {
 		config.labelText = $("input[name='label-text']").val();
+		closeChatWindow();
 		drawButton();
 	}
 	function drawButton() {
@@ -121,7 +129,7 @@ $(document).ready(function(){
 		$('.launcher-label').text(config.labelText);
 	}
 	
-	// Events
+	// Controls
 	$("#button-type").change(updateButtonType);
 	$("select[name='brand-color']").change(updateBrandColor);
 	$("#fill-style").change(updateFillStyle);
@@ -133,4 +141,84 @@ $(document).ready(function(){
 	// Initial conditions
 	$("#label-text-field").hide();
 	drawButton();
+	
+	// Animations
+	
+	var animDefaults = {
+		easing: 'easeOutQuad',
+		duration: 200,	
+	};
+	
+	function openChatWindow() {
+		// Hide launcher
+		anime({
+			targets: '#launcher',
+			opacity: [1,0],
+			duration: animDefaults.duration,
+			easing: animDefaults.easing,
+		});
+		// Show window
+		anime({
+			begin: function(anim){
+				$("#chat-window").css("display", "flex");	
+			},
+			targets: '#chat-window',
+			opacity: [0,1],
+			translateY: [30,0],
+			duration: animDefaults.duration,
+			easing: animDefaults.easing,
+			complete: function(anim){
+				config.isOpen = true;
+			}
+		});
+	}
+	function closeChatWindow() {
+		// Show launcher
+		anime({
+			targets: '#launcher',
+			opacity: [0,1],
+			duration: animDefaults.duration,
+			easing: animDefaults.easing,
+		});
+		// Hide window
+		anime({
+			targets: '#chat-window',
+			opacity: [1,0],
+			// translateY: [0,30],
+			duration: animDefaults.duration,
+			easing: animDefaults.easing,
+			complete: function(anim){
+				config.isOpen = false;
+				$("#chat-window").css("display", "none");
+			}
+		});
+	}
+	function toggleChatWindow() {
+		if (config.isOpen) {
+			closeChatWindow();
+		} else {
+			openChatWindow();
+		}
+	}
+	
+	$("#launcher").click(toggleChatWindow);
+	$(".chat-close").click(toggleChatWindow);	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 });
