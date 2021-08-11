@@ -35,20 +35,6 @@ body {
 	gap: 12px;
 }
 
-/* Controls */
-
-.field {
-	display: flex;
-	flex-direction: column;
-}
-.control-label {
-	font-weight: 700;
-	margin-bottom: 12px;
-}
-.radio-option {
-	height: 28px;
-}
-
 /* Launcher */
 
 .launcher-icon svg {

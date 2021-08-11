@@ -18,7 +18,7 @@ $(document).ready(function(){
 	var cornerStyle = {
 		round: "60px",
 		soft: "8px",
-		sharp: "0px"
+		sharp: "2px"
 	};
 	
 	// Functions
@@ -55,7 +55,6 @@ $(document).ready(function(){
 	}
 	function updateLabelText() {
 		config.labelText = $("input[name='label-text']").val();
-		closeChatWindow();
 		drawButton();
 	}
 	function drawButton() {
