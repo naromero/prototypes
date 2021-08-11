@@ -65,13 +65,13 @@ select {
 	-moz-appearance: none; /* Firefox */
 	-webkit-appearance: none; /* Safari and Chrome */
 	appearance: none;
-	
 	background: var(--input-bg);
 	background-image: url(../img/triangle-down.png);
 	background-repeat: no-repeat;
 	background-position: right var(--unit-3) center;
 	background-size: 16px 16px;
 	padding: var(--unit-3);
+	border-radius: var(--unit-2);
 ​}
 .input-label {
 	font-weight: 700;
