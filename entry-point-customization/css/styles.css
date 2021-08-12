@@ -5,6 +5,9 @@
 	--side-spacing: 20px;
 	--bottom-spacing: 20px;
 }
+* {
+	box-sizing: border-box;
+}
 /* Page */
 body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -15,6 +18,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	height: 100%;
+	overflow: hidden;
 }
 .config-area {
 	padding: 20px;
@@ -125,4 +129,20 @@ body {
 }
 .chat-close:hover {
 	background-color: rgba(0,0,0, .1);	
+}
+
+@media screen and (max-width: 400px) {
+	.page {
+		flex-direction: column;
+		flex-flow: column-reverse;
+		overflow: hidden;
+	}
+	.config-area {
+		flex: 1;
+		overflow: scroll;
+		width: 100%;
+	}
+	.preview-area {
+		flex: 1;
+	}
 }
