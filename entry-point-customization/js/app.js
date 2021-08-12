@@ -106,8 +106,15 @@ $(document).ready(function(){
 		}
 				
 		// Icon
-		var iconPath = `img/${config.icon}-${config.iconStyle}.svg`;
-		$('.launcher-icon').load(iconPath);
+		switch (config.icon) {
+			case "none":
+				$(".launcher-icon").css("display", "none");
+				break;
+			default:
+				$(".launcher-icon").css("display", "flex");
+				var iconPath = `img/${config.icon}-${config.iconStyle}.svg`;
+				$('.launcher-icon').load(iconPath);
+		}
 		
 		// Corner style
 		switch (config.cornerStyle) {
