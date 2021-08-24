@@ -26,10 +26,14 @@
 				</form>
 				<div class="field" id="label-text-field">
 					<label class="input-label" for="label-text">Label Text</label>
-					<input maxlength="16" type="text" name="label-text" value="Chat Now"/>
+					<select name="label-text">
+						<option value="Message Us">Message Us</option>
+						<option value="Chat Now">Chat Now</option>
+						<option value="Get Support">Get Support</option>
+					</select>
 				</div>
 				<div class="field">
-					<label class="input-label" for="brand-color">Brand Color</label>
+					<label class="input-label" for="brand-color">Accent Color</label>
 					<select name="brand-color">
 						<option value="blue">Blue</option>
 						<option value="red">Red</option>
@@ -37,7 +41,7 @@
 					</select>
 				</div>
 				<form id="fill-style" class="field">
-					<label class="input-label">Fill Style</label>
+					<label class="input-label">Button Style</label>
 					<label class="input-radio">
 						<input checked type="radio" name="fill-style" value="default" />
 						<span class="radio-control"></span>
@@ -53,61 +57,87 @@
 					<label class="input-label" for="icon">Icon</label>
 					<select name="icon">
 						<option value="messenger">Messenger</option>
-						<option value="chat">Chat</option>
-						<option value="conversation">Conversation</option>
-						<option value="question">Question</option>
+						<option value="bubble">Bubble</option>
 						<option value="none">None</option>
 					</select>
 				</div>
-				<form id="icon-style" class="field">
-					<label class="input-label">Icon Style</label>
-					<label class="input-radio">
-						<input checked type="radio" name="icon-style" value="filled" />
-						<span class="radio-control"></span>
-						Filled
-					</label>
-					<label class="input-radio">
-						<input type="radio" name="icon-style" value="outline" />
-						<span class="radio-control"></span>
-						Outline
-					</label>
-				</form>
-				<form id="corner-style" class="field">
-					<label class="input-label">Corner Style</label>
-					<label class="input-radio">
-						<input checked type="radio" name="corner-style" value="round" />
-						<span class="radio-control"></span>
-						Round
-					</label>
-					<label class="input-radio">
-						<input type="radio" name="corner-style" value="soft" />
-						<span class="radio-control"></span>
-						Soft
-					</label>
-					<label class="input-radio">
-						<input type="radio" name="corner-style" value="sharp" />
-						<span class="radio-control"></span>
-						Sharp
-					</label>
-				</form>
+				<div class="experimental-controls-toggle" id="show-experimental-controls">
+					Show experimental controls...
+				</div>
+				<div class="experimental-controls">
+					<form id="corner-style" class="field">
+						<label class="input-label">Corner Style</label>
+						<label class="input-radio">
+							<input checked type="radio" name="corner-style" value="round" />
+							<span class="radio-control"></span>
+							Round
+						</label>
+						<label class="input-radio">
+							<input type="radio" name="corner-style" value="soft" />
+							<span class="radio-control"></span>
+							Soft
+						</label>
+						<label class="input-radio">
+							<input type="radio" name="corner-style" value="sharp" />
+							<span class="radio-control"></span>
+							Sharp
+						</label>
+					</form>
+					<form id="icon-style" class="field">
+						<label class="input-label">Icon Style</label>
+						<label class="input-radio">
+							<input checked type="radio" name="icon-style" value="filled" />
+							<span class="radio-control"></span>
+							Filled
+						</label>
+						<label class="input-radio">
+							<input type="radio" name="icon-style" value="outline" />
+							<span class="radio-control"></span>
+							Outline
+						</label>
+					</form>
+					<div class="experimental-controls-toggle">
+						Hide experimental controls...
+					</div>
+				</div>
 			</div>
 			<div class="preview-area">
 				<div id="chat-window">
-					<div class="chat-header">
-						<div class="chat-header--left">
-							
+					<div class="chat-controls">
+						<div class="chat-controls--left">
+							<div class="chat-logo"></div>
 						</div>
-						<div class="chat-header--right">
-							<div class="chat-close">
-								
+						<div class="chat-controls--right">
+							<div class="chat-close"></div>
+						</div>
+					</div>
+					<div class="chat-body">
+						<div class="chat-title">
+							Chat with WestJet
+							<div class="chat-reply-time">
+								Typically responds in minutes
 							</div>
 						</div>
+						<div class="chat-welcome-message">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+						</div>
+						<div class="chat-actions">
+							<div class="chat-button chat-button--primary">
+								Log into Messenger
+							</div>
+							<div class="chat-button">
+								Continue as Guest
+							</div>
+						</div>
+					</div>
+					<div class="chat-footer">
+						By continuing as a guest, you agree to Facebook's Terms, Data Policy and Cookies Policy.
 					</div>
 				</div>
 				<div id="launcher" class="launcher launcher--bubble">
 					<div class="launcher-icon">
 					</div>
-					<div class="launcher-label">Chat Now</div>
+					<div class="launcher-label">Message Us</div>
 				</div>
 			</div>
 		</div>

@@ -22,10 +22,18 @@ body {
 }
 .config-area {
 	padding: 20px;
-	width: 240px;
-	display: flex;
-	flex-direction: column;
-	gap: 24px;
+	width: 300px;
+}
+.experimental-controls {
+	display: none;
+}
+.config-area > *,
+.experimental-controls > * {
+	margin-bottom: 24px;
+}
+.experimental-controls-toggle {
+	color: #248fff;
+	cursor: pointer;
 }
 .preview-area {
 	position: relative;
@@ -59,7 +67,8 @@ body {
 	filter: brightness(95%);
 }
 .launcher-label {
-	font-size: 17px;
+	font-size: 18px;
+	line-height: 24px;
 	font-weight: 600;
 	-webkit-user-select: none;
 }
@@ -79,7 +88,7 @@ body {
 	display: none;
 }
 .launcher.launcher--pill {
-	padding: 0 16px;
+	padding: 10px 16px;
 	height: 44px;
 	border-radius: 60px;
 }
@@ -100,21 +109,20 @@ body {
 	position: absolute;
 	right: var(--side-spacing);
 	bottom: var(--bottom-spacing);
-	height: calc(100% - var(--bottom-spacing) * 2);
+	height: auto;
 	width: 375px;
 	border-radius: 18px;
-	/* max-height: 708px; */
-	max-height: 446px;
 	background: #fff;
 	box-shadow: var(--shadow);
 }
-.chat-header {
+.chat-controls {
 	display: flex;
+	flex-direction: row;
 }
-.chat-header--left,
-.chat-header--right {
+.chat-controls--left,
+.chat-controls--right {
 	flex: 1;
-	padding: 12px;
+	padding: 24px;
 }
 .chat-close {
 	width: 32px;
@@ -130,6 +138,61 @@ body {
 }
 .chat-close:hover {
 	background-color: rgba(0,0,0, .1);	
+}
+.chat-logo {
+	width: 36px;
+	height: 36px;
+	background-image: url("../img/westjet-icon.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.chat-body {
+	padding: 0 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+.chat-title {
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 700;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+.chat-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+.chat-button {
+	font-size: 17px;
+	font-weight: 600;
+	padding: 16px;
+	flex-grow: 1;
+	background: #f4f5f4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 16px;
+	cursor: pointer;
+}
+.chat-button.chat-button--primary {
+	color: #fff;
+	background-color: #007cf0;
+}
+.chat-footer {
+	text-align: center;
+	font-size: 13px;
+	line-height: 18px;
+	color: rgba(0,0,0,.5);
+	padding: 24px 16px;
+}
+.chat-reply-time {
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 400;
+	color: rgba(0,0,0,.5);
 }
 
 @media screen and (max-width: 400px) {

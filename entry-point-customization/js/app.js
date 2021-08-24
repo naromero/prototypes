@@ -7,7 +7,7 @@ $(document).ready(function(){
 		icon: "messenger",
 		iconStyle: "filled",
 		cornerStyle: "round",
-		labelText: "Chat Now",
+		labelText: "Message Us",
 		isOpen: false,
 	};
 	var colors = {
@@ -54,7 +54,7 @@ $(document).ready(function(){
 		drawButton();
 	}
 	function updateLabelText() {
-		config.labelText = $("input[name='label-text']").val();
+		config.labelText = $("select[name='label-text']").val();
 		drawButton();
 	}
 	function drawButton() {
@@ -135,6 +135,11 @@ $(document).ready(function(){
 		$('.launcher-label').text(config.labelText);
 	}
 	
+	function toggleExperimentalControls() {
+		$("#show-experimental-controls").toggle();
+		$(".experimental-controls").toggle();
+	}
+	
 	// Controls
 	$("#button-type").change(updateButtonType);
 	$("select[name='brand-color']").change(updateBrandColor);
@@ -142,7 +147,8 @@ $(document).ready(function(){
 	$("select[name='icon']").change(updateIcon);
 	$("#icon-style").change(updateIconStyle);
 	$("#corner-style").change(updateCornerStyle);
-	$("input[name='label-text']").keyup(updateLabelText);
+	$("select[name='label-text']").change(updateLabelText);
+	$(".experimental-controls-toggle").on("click", toggleExperimentalControls);
 	
 	// Initial conditions
 	$("#label-text-field").hide();
