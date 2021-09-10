@@ -1,0 +1,67 @@
+/* Overrides for compact mode */
+
+:root {
+	/* Font size */
+	--font-size-caption: 12px;
+	--font-size-body: 15px;	
+	--font-size-title: 17px;
+	--font-size-small-title: 15px;
+	--font-size-button: 15px;
+	--font-size-message: 14px;
+	
+	/* Line height */
+	--line-height-caption: 16px;
+	--line-height-body: 20px;
+	--line-height-title: 20px;
+	--line-height-small-title: 18px;
+	--line-height-button: 18px;
+	--line-height-message: 16px;
+}
+
+/* ---------------
+   Components
+   --------------- */
+
+.button {
+	height: 40px;
+	border-radius: 8px;
+}
+
+/* ---------------
+   Chat window
+   --------------- */
+
+.chat-view {
+	height: 500px;
+}
+.chat-window {
+	width: 300px;
+}
+
+.business-logo {
+	width: 36px;
+	height: 36px;
+}
+.welcome-body {
+	gap: 16px;	
+}
+
+.welcome-controls {
+	padding: 20px 24px 16px 24px;	
+}
+
+.welcome-footer {
+	padding-top: 16px;
+}
+.composer {
+	padding: 4px;
+	gap: 0px;
+}
+.message-group.message-group--inbound:before {
+	width: 16px;
+	height: 16px;
+	background-size: 16px;
+}
+.message-group.message-group--inbound {
+	padding-left: 38px;
+}

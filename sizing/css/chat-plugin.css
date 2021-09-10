@@ -1,0 +1,307 @@
+:root {
+	/* Font size */
+	--font-size-caption: 13px;
+	--font-size-body: 15px;	
+	--font-size-title: 20px;
+	--font-size-small-title: 17px;
+	--font-size-button: 17px;
+	--font-size-message: 16px;
+	
+	/* Line height */
+	--line-height-caption: 16px;
+	--line-height-body: 20px;
+	--line-height-title: 24px;
+	--line-height-small-title: 22px;
+	--line-height-button: 18px;
+	--line-height-message: 20px;
+	
+	/* Other */	
+	--accent: #1a35f5;
+	--border-color: rgba(0,0,0,.08);
+	--ease: ease;
+	--shadow: 0 4px 12px rgba(0,0,0,.15);
+	--text-secondary: rgba(0,0,0,.5);
+}
+.chat-plugin * {
+	transition: all 100ms ease;
+}
+
+/* ---------------
+   Typography 
+   --------------- */
+   
+.chat-plugin {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	color: #000;
+}
+.caption {
+	font-size: var(--font-size-caption);
+	line-height: var(--line-height-caption);
+	font-weight: 400;
+	color: var(--text-secondary);
+}
+.title {
+	font-size: var(--font-size-title);
+	line-height: var(--line-height-title);
+	font-weight: 700;
+}
+.small-title {
+	font-size: var(--font-size-small-title);
+	line-height: var(--line-height-small-title);
+	font-weight: 700;
+}
+.body {
+	font-size: 15px;
+	line-height: var(--line-height-body);
+}
+
+/* ---------------
+   Generic Components 
+   --------------- */
+
+.button {
+	font-size: var(--font-size-button);
+	line-height: var(--line-height-button);
+	font-weight: 500;
+	padding: 0 16px;
+	height: 52px;
+	flex-grow: 1;
+	background: #f4f5f4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 16px;
+	cursor: pointer;
+}
+.button.button--primary {
+	color: #fff;
+	background-color: var(--accent);
+}
+
+/* ---------------
+   Chat button
+   --------------- */
+   
+.chat-button {
+	background-image: url("../img/messenger.png");
+	background-size: 36px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: var(--accent);
+	width: 60px;
+	height: 60px;
+	color: #fff;
+	box-shadow: var(--shadow);
+	cursor: pointer;
+	border-radius: 60px;
+	transition: filter var(--duration) var(--ease);
+}
+.chat-button:hover {
+	filter: brightness(95%);
+}
+.chat-button.chat-button--compact {
+	width: 44px;
+	height: 44px;
+	background-size: 24px;
+}
+
+/* ---------------
+   Chat window - generic
+   --------------- */
+   
+.chat-plugin {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   gap: 12px;
+}
+.chat-window {
+   z-index: 3;
+   height: auto;
+   width: 375px;
+   border-radius: 18px;
+   background: #fff;
+   box-shadow: var(--shadow);
+}
+.controls {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.controls--left,
+.controls--right {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+.controls--left {
+	flex: 1;
+}
+.controls--right {
+	justify-content: flex-end;
+}
+.control {
+	width: 32px;
+	height: 32px;
+	border-radius: 32px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: rgba(0,0,0, .05);
+	background-size: 20px 20px;
+}
+.control:hover {
+	background-color: rgba(0,0,0, .1);	
+}
+.control--close {
+	background-image: url("../img/minus.png");
+}
+.control--more {
+	background-image: url("../img/dots.png");
+}
+.business-logo {
+	width: 48px;
+	height: 48px;
+	background-image: url("../img/telco-wireless.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.business-logo.business-logo--compact {
+	width: 36px;
+	height: 36px;
+}
+   
+/* ---------------
+   Chat window - welcome view
+   --------------- */
+.welcome-view {
+}
+.welcome-controls {
+	padding: 24px;
+}
+.welcome-header {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+.welcome-body {
+	padding: 0 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+.welcome-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+.welcome-footer {
+	text-align: center;
+	padding: 24px;
+}
+   
+/* ---------------
+   Chat window - chat view
+   --------------- */  
+.chat-view {	
+	height: 700px;
+	display: flex;
+	flex-direction: column;
+}
+.chat-controls {
+	padding: 12px 12px 0;
+}
+.chat-body {
+	flex: 1;
+}
+.message-group {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	
+}
+.message-group + .message-group {
+	/* Gap between message groups */
+	padding-top: 12px;
+}
+.message-group.message-group--outbound {
+	align-items: flex-end;
+	padding-right: 12px;	
+}
+.message-group.message-group--inbound {
+	padding-left: 52px;
+	position: relative;
+}
+.message-group.message-group--inbound:before {
+	content: '';
+	position: absolute;
+	left: 12px;
+	bottom: 0;
+	width: 28px;
+	height: 28px;
+	border-radius: 28px;
+	background-image: url("../img/telco-wireless.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 28px;
+}
+.message-group--outbound .message {
+	background-color: var(--accent);
+	color: #fff;
+}
+.message-group--outbound .message--start {
+	border-bottom-right-radius: 4px;
+}
+.message-group--outbound .message--end {
+	border-top-right-radius: 4px;
+}
+.message-group--inbound .message--start {
+	border-bottom-left-radius: 4px;
+}
+.message-group--inbound .message--end {
+	border-top-left-radius: 4px;
+}
+.message {
+	font-size: var(--font-size-message);
+	line-height: var(--line-height-message);
+	background-color: #eff0ef;
+	max-width: 60%;
+	border-radius: 18px;
+	padding: 8px 12px;
+}
+.admin-message {
+	font-size: var(--font-size-caption);
+	text-align: center;
+	color: var(--text-secondary);
+	padding: 20px 0 16px 0;
+}
+.composer {
+	display: flex;
+	align-items: center;
+	padding: 8px;
+	gap: 4px;
+	border-top: 0.5px solid var(--border-color);
+}
+.composer-controls-left {
+	display: flex;
+}
+.composer-input {
+	flex: 1;
+	border: none;
+	outline: none;
+	height: 100%;
+	font-size: var(--font-size-message);
+	line-height: var(--line-height-message);
+}
+.composer-controls-right {
+	
+}
+.composer-control {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 44px;
+	height: 44px;
+	color: var(--accent);
+	cursor: pointer;
+}

@@ -1,0 +1,184 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="js/app.js"></script>
+		<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+		<link href='css/reset.css' rel='stylesheet' type='text/css'>
+		<link href='css/styles.css' rel='stylesheet' type='text/css'>
+		<link href='css/forms.css' rel='stylesheet' type='text/css'>
+		<link href='css/playground.css' rel='stylesheet' type='text/css'>
+		<link href='css/chat-plugin.css' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<div class="page">
+			<div class="config-area">
+				<form id="current-view" class="field">
+					<label class="input-label">Current view</label>
+					<label class="input-radio">
+						<input checked type="radio" name="current-view" value="welcome" />
+						<span class="radio-control"></span>
+						Welcome
+					</label>
+					<label class="input-radio">
+						<input type="radio" name="current-view" value="chat" />
+						<span class="radio-control"></span>
+						Chat
+					</label>
+				</form>
+				<form id="density" class="field">
+					<label class="input-label">Density</label>
+					<label class="input-radio">
+						<input checked type="radio" name="density" value="default" />
+						<span class="radio-control"></span>
+						Default
+					</label>
+					<label class="input-radio">
+						<input type="radio" name="density" value="compact" />
+						<span class="radio-control"></span>
+						Compact
+					</label>
+				</form>
+				<form id="placement" class="field">
+					<label class="input-label">Chat window placement</label>
+					<label class="input-radio">
+						<input checked type="radio" name="placement" value="above-chat-button" />
+						<span class="radio-control"></span>
+						Above chat button
+					</label>
+					<label class="input-radio">
+						<input type="radio" name="placement" value="overlay-chat-button" />
+						<span class="radio-control"></span>
+						Overlay chat button
+					</label>
+				</form>
+				<form id="chat-button-size" class="field">
+					<label class="input-label">Chat button size</label>
+					<label class="input-radio">
+						<input checked type="radio" name="chat-button-size" value="default" />
+						<span class="radio-control"></span>
+						Default
+					</label>
+					<label class="input-radio">
+						<input type="radio" name="chat-button-size" value="compact" />
+						<span class="radio-control"></span>
+						Compact
+					</label>
+				</form>
+			</div>
+			<div class="preview-area">
+				<div class="chat-plugin">
+					<div class="chat-window">
+						<div class="welcome-view">
+							<div class="welcome-controls">
+								<div class="controls">
+									<div class="controls--left">
+										<div class="business-logo"></div>
+									</div>
+									<div class="controls--right">
+										<div class="control control--more"></div>
+										<div class="control control--close"></div>
+									</div>
+								</div>
+							</div>
+							<div class="welcome-body">
+								<div class="welcome-header">
+									<div class="title">
+										Chat with Telco Wireless
+									</div>
+									<div class="caption">
+										Typically responds in minutes
+									</div>
+								</div>
+								
+								<div class="body">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+								</div>
+								<div class="welcome-actions">
+									<div class="button button--primary">
+										Log into Messenger
+									</div>
+									<div class="button">
+										Continue as Guest
+									</div>
+								</div>
+							</div>
+							<div class="welcome-footer">
+								<div class="caption">
+									By continuing as a guest, you agree to Facebook's Terms, Data Policy and Cookies Policy.
+								</div>
+							</div>
+						</div>
+						<div class="chat-view">
+							<div class="chat-controls">
+								<div class="controls">
+									<div class="controls--left">
+										<div class="business-logo business-logo--compact"></div>
+										<div>
+											<div class="small-title">
+												Telco Wireless
+											</div>
+											<div class="caption">
+												Powered by Messenger
+											</div>
+										</div>
+									</div>
+									<div class="controls--right">
+										<div class="control control--more"></div>
+										<div class="control control--close"></div>
+									</div>
+								</div>
+							</div>
+							<div class="chat-body">
+								<div class="admin-message">
+									10:30 AM
+								</div>
+								<div class="message-group message-group--outbound">
+									<div class="message message--start">
+										Hey there
+									</div>
+									<div class="message message--end">
+										Are there any active discount codes I can use?
+									</div>
+								</div>
+								<div class="message-group message-group--inbound">
+									<div class="message message--start">
+										Yes! We're offering 20% off during our summer sale.
+									</div>
+									<div class="message message--end">
+										Enter "summer20" at checkout for the discount.
+									</div>
+								</div>
+								<div class="admin-message">
+									10:45 AM
+								</div>
+								<div class="message-group message-group--outbound">
+									<div class="message">
+										Thanks!
+									</div>
+								</div>
+							</div>
+							<div class="composer">
+								<div class="composer-controls-left">
+									<div class="composer-control">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M18 29C24.0751 29 29 24.0751 29 18C29 11.9249 24.0751 7 18 7C11.9249 7 7 11.9249 7 18C7 24.0751 11.9249 29 18 29ZM11.5 14C11.5 13.4477 11.9477 13 12.5 13H23.5C24.0523 13 24.5 13.4477 24.5 14C24.5 14.5523 24.0523 15 23.5 15H12.5C11.9477 15 11.5 14.5523 11.5 14ZM12.5 17C11.9477 17 11.5 17.4477 11.5 18C11.5 18.5523 11.9477 19 12.5 19H23.5C24.0523 19 24.5 18.5523 24.5 18C24.5 17.4477 24.0523 17 23.5 17H12.5ZM12.5 21C11.9477 21 11.5 21.4477 11.5 22C11.5 22.5523 11.9477 23 12.5 23H23.5C24.0523 23 24.5 22.5523 24.5 22C24.5 21.4477 24.0523 21 23.5 21H12.5Z" fill="currentColor"/>
+											</svg>
+									</div>
+								</div>
+								<input type="text" class="composer-input" placeholder="Ask a question..."/>
+								<div class="composer-controls-right">
+									<div class="composer-control">
+										<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M16 8.5C14.4812 8.5 13.25 9.73122 13.25 11.25V22.75C13.25 25.3734 15.3766 27.5 18 27.5C20.6234 27.5 22.75 25.3734 22.75 22.75V14.25C22.75 13.5596 23.3096 13 24 13C24.6904 13 25.25 13.5596 25.25 14.25V22.75C25.25 26.7541 22.0041 30 18 30C13.9959 30 10.75 26.7541 10.75 22.75V11.25C10.75 8.35051 13.1005 6 16 6C18.8995 6 21.25 8.3505 21.25 11.25V20.75C21.25 22.5449 19.7949 24 18 24C16.2051 24 14.75 22.5449 14.75 20.75V14C14.75 13.3096 15.3096 12.75 16 12.75C16.6904 12.75 17.25 13.3096 17.25 14V20.75C17.25 21.1642 17.5858 21.5 18 21.5C18.4142 21.5 18.75 21.1642 18.75 20.75V11.25C18.75 9.73122 17.5188 8.5 16 8.5Z" fill="currentColor"/>
+											</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="chat-button"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
