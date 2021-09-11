@@ -30,6 +30,16 @@
 /* ---------------
    Chat window
    --------------- */
+   
+#chat-view.chat-window--large {
+	max-height: 2000px;
+}
+#chat-view.chat-window--medium {
+	max-height: 566px;
+}
+#chat-view.chat-window--small {
+	max-height: 400px;
+}
 
 .chat-view {
 	height: 500px;

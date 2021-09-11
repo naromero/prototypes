@@ -5,12 +5,38 @@ $(document).ready(function(){
 	var config = {
 		density: "default",
 		placement: "above-chat-button",
-		currentView: "welcome",
+		currentView: "chat",
 		chatButtonSize: "default",
+		chatWindowSize: "medium",
 	};
 	
 	// Functions
 	
+	function updateChatWindowSize(){
+		config.chatWindowSize = $("input[name='chat-window-size']:checked").val();
+		switch (config.chatWindowSize) {
+			case "small":
+				$("#chat-view").addClass("chat-window--small");
+				$("#chat-view").removeClass("chat-window--medium");
+				$("#chat-view").removeClass("chat-window--large");
+				console.log(config);
+				break;
+			case "medium":
+				$("#chat-view").removeClass("chat-window--small");
+				$("#chat-view").addClass("chat-window--medium");
+				$("#chat-view").removeClass("chat-window--large");
+				console.log(config);
+				break;
+			case "large":
+				$("#chat-view").removeClass("chat-window--small");
+				$("#chat-view").removeClass("chat-window--medium");
+				$("#chat-view").addClass("chat-window--large");
+				console.log(config);
+				break;
+			default:
+				console.log("invalid chat window size selection");
+		}
+	}
 	function updateDensity() {
 		config.density = $("input[name='density']:checked").val();
 		switch (config.density) {
@@ -41,12 +67,12 @@ $(document).ready(function(){
 		config.currentView = $("input[name='current-view']:checked").val();
 		switch (config.currentView) {
 			case "welcome":
-				$(".welcome-view").show();
-				$(".chat-view").hide();
+				$("#welcome-view").show();
+				$("#chat-view").hide();
 				break;
 			case "chat":
-				$(".welcome-view").hide();
-				$(".chat-view").show();
+				$("#welcome-view").hide();
+				$("#chat-view").show();
 				break;
 			default:
 				console.log("invalid view selection");
@@ -73,6 +99,7 @@ $(document).ready(function(){
 	$("#placement").change(updatePlacement);
 	$("#current-view").change(updateCurrentView);
 	$("#chat-button-size").change(updateChatButtonSize);
+	$("#chat-window-size").change(updateChatWindowSize);
 	
 	
 	// Initial conditions
@@ -81,5 +108,6 @@ $(document).ready(function(){
 	updatePlacement();
 	updateCurrentView();
 	updateChatButtonSize();
+	updateChatWindowSize();
 
 });
