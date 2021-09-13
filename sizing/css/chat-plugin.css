@@ -26,7 +26,7 @@
    Typography 
    --------------- */
    
-* {
+.chat-plugin * {
 	transition: all 200ms ease;
 }
    
