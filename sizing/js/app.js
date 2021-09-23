@@ -4,7 +4,7 @@ $(document).ready(function(){
 	
 	var config = {
 		density: "default",
-		placement: "above-chat-button",
+		placement: "overlay-chat-button",
 		currentView: "chat",
 		chatButtonSize: "default",
 		chatWindowSize: "medium",
